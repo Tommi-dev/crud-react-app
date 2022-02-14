@@ -19,6 +19,7 @@ const App = () => {
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   /**
    * Get all employees from the backend
@@ -26,19 +27,23 @@ const App = () => {
   useEffect(() => {
 
     employeeService
-      .getAllEmployees().then(initialEmployees => {
+      .getAllEmployees()
+      .then(initialEmployees => {
         setEmployees(initialEmployees);
+      })
+      .catch(error => {
+        setErrorMessage(error.message);
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
       });
 
   }, []);
 
-  console.log('render', employees.length, 'employees');
-  console.log(employees);
-
   /**
    * Create new employee
    */
-  const createNewEmployee = (event) => {
+  const createNewEmployee = async (event) => {
 
     event.preventDefault();
 
@@ -49,9 +54,17 @@ const App = () => {
       phone: phone
     };
 
-    employeeService
-      .createNewEmployee(JSON.stringify(employeeObject)).then(returnedEmployees => {
+    await employeeService
+      .createNewEmployee(employeeObject)
+      .then(returnedEmployees => {
         setEmployees(employees.concat(returnedEmployees));
+
+      })
+      .catch(error => {
+        setErrorMessage(error.message);
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
       });
 
     setFirstname('');
@@ -63,6 +76,7 @@ const App = () => {
 
   return (
     <div>
+      <h3> {errorMessage} </h3>
 
       <Form
         createNewEmployee={createNewEmployee}
