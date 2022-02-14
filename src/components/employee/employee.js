@@ -46,7 +46,7 @@ const Employee = ({ employee, deleteEmployee, updateEmployee }) => {
   return (
     <div>
 
-      <h2> {employee.firstname} {employee.lastname} </h2>
+      <h3> {employee.firstname} {employee.lastname} </h3>
       <p style={hideEmailWhenVisible} >Email: {employee.email} </p>
       <button style={hideEmailWhenVisible} onClick={() => setEmailVisible(true)} >Edit</button>
 

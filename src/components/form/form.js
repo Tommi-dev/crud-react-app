@@ -5,6 +5,7 @@ const Form = (props) => {
 
   return (
     <form onSubmit={props.createNewEmployee} >
+      <h2>Add a new employee</h2>
 
       <p>Firstname:</p>
       <input

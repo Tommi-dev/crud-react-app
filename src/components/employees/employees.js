@@ -6,6 +6,7 @@ const Employees = ({ employees, deleteEmployee, updateEmployee }) => {
 
   return (
     <div>
+      <h2>Employees</h2>
 
       {employees.map(employee =>
 
