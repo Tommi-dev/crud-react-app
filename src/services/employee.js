@@ -1,8 +1,8 @@
+/* eslint-disable no-undef */
 const url = `http://localhost:${process.env.PORT}/api/employees`;
 
 const getAllEmployees = async () => {
 
-  // eslint-disable-next-line no-undef
   let response = await fetch(url, {
     method: 'GET',
     headers: {
@@ -18,4 +18,22 @@ const getAllEmployees = async () => {
 
 };
 
-export default { getAllEmployees };
+const createNewEmployee = async (newEmployee) => {
+
+  let response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8'
+    },
+    body: newEmployee,
+    mode: 'cors'
+  });
+
+  if (response.status === 201) {
+    let data = await response.json();
+    return data;
+  }
+
+};
+
+export default { getAllEmployees, createNewEmployee };
