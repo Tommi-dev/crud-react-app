@@ -27,7 +27,6 @@
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
-    "dotenv": "^16.0.0",
     "eslint": "^8.9.0",
     "eslint-plugin-react": "^7.28.0",
     "html-webpack-plugin": "^5.5.0",
