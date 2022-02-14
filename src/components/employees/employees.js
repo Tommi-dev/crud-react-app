@@ -2,7 +2,7 @@
 import React from 'react';
 import Employee from '../employee/employee';
 
-const Employees = ({ employees, deleteEmployee }) => {
+const Employees = ({ employees, deleteEmployee, updateEmployee }) => {
 
   return (
     <div>
@@ -13,6 +13,7 @@ const Employees = ({ employees, deleteEmployee }) => {
           key={employee.id}
           employee={employee}
           deleteEmployee={deleteEmployee}
+          updateEmployee={updateEmployee}
         />
 
       )}

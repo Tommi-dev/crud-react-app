@@ -83,6 +83,25 @@ const App = () => {
     setDeleted(!deleted);
   };
 
+  /**
+   * Update employee
+   */
+  const updateEmployee = async (id, newObject) => {
+
+    await employeeService
+      .updateEmployee(id, newObject)
+      .then(returnedEmployees => {
+        setEmployees(employees.map(employee => employee.id !== id ? employee : returnedEmployees));
+      })
+      .catch(error => {
+        setErrorMessage(error.message);
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
+      });
+
+  };
+
   return (
     <div>
       <h3> {errorMessage} </h3>
@@ -102,6 +121,7 @@ const App = () => {
       <Employees
         employees={employees}
         deleteEmployee={deleteEmployee}
+        updateEmployee={updateEmployee}
       />
 
     </div>

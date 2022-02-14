@@ -56,4 +56,31 @@ const deleteEmployee = async (id) => {
 
 };
 
-export default { getAllEmployees, createNewEmployee, deleteEmployee };
+const updateEmployee = async (id, newObject) => {
+
+  let response = await fetch(`${url}/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8'
+    },
+    body: JSON.stringify(newObject),
+    mode: 'cors'
+  });
+
+  if (response.status === 200) {
+    let data = await response.json();
+    return data;
+
+  } else {
+    let data = await response.json();
+    throw new Error(data.error);
+  }
+
+};
+
+export default {
+  getAllEmployees,
+  createNewEmployee,
+  deleteEmployee,
+  updateEmployee
+};
