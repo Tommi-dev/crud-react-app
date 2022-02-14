@@ -3,6 +3,7 @@
  */
 import React, { useEffect, useState } from 'react';
 import employeeService from './services/employee';
+import Employees from './components/employees/employees';
 
 /**
  * Main component
@@ -32,15 +33,9 @@ const App = () => {
   return (
     <div>
 
-      {employees.map(employee =>
-
-        <div key={employee.id} >
-          <h2> {employee.firstname} {employee.lastname} </h2>
-          <p>Email: {employee.email} </p>
-          <p>phone: {employee.phone} </p>
-        </div>
-
-      )}
+      <Employees
+        employees={employees}
+      />
 
     </div>
   );
