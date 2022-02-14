@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import employeeService from './services/employee';
 import Employees from './components/employees/employees';
+import Form from './components/form/form';
 
 /**
  * Main component
@@ -63,32 +64,17 @@ const App = () => {
   return (
     <div>
 
-      <form onSubmit={createNewEmployee} >
-
-        <p>Firstname:</p>
-        <input
-          value={firstname}
-          onChange={({ target }) => setFirstname(target.value)}
-        />
-        <p>Lastname:</p>
-        <input
-          value={lastname}
-          onChange={({ target }) => setLastname(target.value)}
-        />
-        <p>Email:</p>
-        <input
-          value={email}
-          onChange={({ target }) => setEmail(target.value)}
-        />
-        <p>Phone:</p>
-        <input
-          value={phone}
-          onChange={({ target }) => setPhone(target.value)}
-        />
-
-        <button type='submit' >Add</button>
-
-      </form>
+      <Form
+        createNewEmployee={createNewEmployee}
+        firstname={firstname}
+        lastname={lastname}
+        email={email}
+        phone={phone}
+        setFirstname={setFirstname}
+        setLastname={setLastname}
+        setEmail={setEmail}
+        setPhone={setPhone}
+      />
 
       <Employees
         employees={employees}
