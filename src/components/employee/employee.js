@@ -16,7 +16,7 @@ const Employee = ({ employee, deleteEmployee, updateEmployee }) => {
 
   const removeEmployee = () => {
     // eslint-disable-next-line no-undef
-    if (window.confirm(`Notice that ${employee.firstname} ${employee.lastname} will be removed permanently?`)) {
+    if (window.confirm(`Notice that ${employee.firstname} ${employee.lastname} will be removed permanently`)) {
       deleteEmployee(employee.id);
     }
   };
