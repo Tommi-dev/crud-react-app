@@ -2,7 +2,7 @@
 import React from 'react';
 import Employee from '../employee/employee';
 
-const Employees = ({ employees }) => {
+const Employees = ({ employees, deleteEmployee }) => {
 
   return (
     <div>
@@ -12,6 +12,7 @@ const Employees = ({ employees }) => {
         <Employee
           key={employee.id}
           employee={employee}
+          deleteEmployee={deleteEmployee}
         />
 
       )}

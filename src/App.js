@@ -20,6 +20,7 @@ const App = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [deleted, setDeleted] = useState(false);
 
   /**
    * Get all employees from the backend
@@ -38,7 +39,7 @@ const App = () => {
         }, 5000);
       });
 
-  }, []);
+  }, [deleted]);
 
   /**
    * Create new employee
@@ -74,6 +75,14 @@ const App = () => {
 
   };
 
+  /**
+   * Delete employee
+   */
+  const deleteEmployee = (id) => {
+    employeeService.deleteEmployee(id);
+    setDeleted(!deleted);
+  };
+
   return (
     <div>
       <h3> {errorMessage} </h3>
@@ -92,6 +101,7 @@ const App = () => {
 
       <Employees
         employees={employees}
+        deleteEmployee={deleteEmployee}
       />
 
     </div>

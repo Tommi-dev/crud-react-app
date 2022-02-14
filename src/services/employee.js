@@ -44,4 +44,16 @@ const createNewEmployee = async (newEmployee) => {
 
 };
 
-export default { getAllEmployees, createNewEmployee };
+const deleteEmployee = async (id) => {
+
+  await fetch(`${url}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8'
+    },
+    mode: 'cors'
+  });
+
+};
+
+export default { getAllEmployees, createNewEmployee, deleteEmployee };
