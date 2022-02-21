@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800&display=swap');
+
+.form-container {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-container h2 {
+  color: white;
+  font-family: 'Saira Condensed', sans-serif;
+}
+
+.form-container p {
+  color: white;
+  font-family: 'Saira Condensed', sans-serif;
+  text-align: left;
+}
+
+.form-container input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+}
+
+.form-container button {
+  display: block;
+  width: 100px;
+  margin-top: 10px;
+  padding: 5px;
+  color: white;
+  font-family: 'Saira Condensed', sans-serif;
+  font-weight: 700;
+  background-color: rgb(65, 142, 206);
+  border-color: white;
+  border-style: dotted;
+}
+
+.form-container button:hover {
+  background-color: rgb(49, 130, 196);
+  border-color: rgba(255, 255, 255, 0.795);
+}

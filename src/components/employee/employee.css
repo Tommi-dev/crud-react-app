@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800&display=swap');
+
+.employee-container {
+  border-top: dotted;
+  border-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.employee-container h3 {
+  color: white;
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 15px;
+  display: block;
+  margin-right: 15px;
+  min-width: 150px;
+  text-align: left;
+}
+
+
+.email-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.email-container-2 {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between; 
+}
+
+.email-container-2 input {
+  width: 100px;
+  margin-right: 15px;
+}
+
+.email-container-2 button {
+  width: 40px;
+  margin-right: 11px;
+  font-size: 8px;
+}
+
+.employee-container p {
+  color: white;
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 12px;
+  min-width: 146px;
+  align-self: center;
+  text-align: left;
+}
+
+.phone-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.phone-container-2 {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between; 
+}
+
+.phone-container-2 input {
+  width: 100px;
+  margin-right: 15px;
+}
+
+.phone-container-2 button {
+  width: 40px;
+  margin-right: 11px;
+  font-size: 8px;
+}
+
+.edit-button {
+  width: 50px;
+  margin: 15px;
+  font-size: 8px;
+}
+
+.delete-button {
+  display: block;
+  width: 70px;
+  padding: 5px;
+  color: white;
+  font-family: 'Saira Condensed', sans-serif;
+  background-color: rgb(206, 104, 104);
+  border-color: white;
+  border-style: dotted;
+  margin-left: 10px;
+}
+
+.delete-button:hover {
+  background-color: rgb(199, 82, 82);
+}

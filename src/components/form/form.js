@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './form.css';
 
 const Form = (props) => {
 
   return (
-    <form onSubmit={props.createNewEmployee} >
+    <form className='form-container' onSubmit={props.createNewEmployee} >
       <h2>Add a new employee</h2>
 
       <p>Firstname:</p>
